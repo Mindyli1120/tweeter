@@ -1,0 +1,30 @@
+.new-tweet {
+  background-color: #eee;
+  margin: 0.5em 2em;
+  width: 24em;
+  height: 10em;
+  border-style: groove;
+  border-radius: 10px;
+}
+
+.new-tweet h2 {
+  color: #0b6557;
+  border-bottom-style: ridge;
+  margin: 5px;
+}
+
+.new-tweet textarea {
+  height: 68px;
+  margin: 5px 8px 5px;
+  width: 95%;
+}
+
+.new-tweet input {
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-right: 270px;
+}
+
+.counter {
+  font-style: italic;
+}
