@@ -1,0 +1,62 @@
+.tweet {
+  margin: 0.5em 2em;
+  border-radius: 10px;
+  border-style: groove;
+  width: 24em;
+  height: 15em;
+}
+
+.tweet header {
+  background-color: #eee;
+  height: 4.5em;
+
+}
+
+.tweet img {
+  width: 3.7em;
+  border-radius: 0.5em;
+  margin: 0.25em;
+
+}
+
+.tweet .username {
+  font-size: 1.7em;
+  margin: 5px;
+  position: absolute;
+  font-weight: 700;
+  color: #64827d;
+}
+
+.tweet .handle {
+  font-size: 1em;
+  margin-left: 240px;
+  position: absolute;
+  margin-top: 12px;
+  color: #9e9e9e;
+}
+
+.tweet .content {
+  border-bottom-style: ridge;
+  height: 48%;
+  border-bottom-color: #f9f9f9;
+  margin: 10px;
+  color: #29655c;
+}
+
+.tweet footer {
+  margin-left: 10px;
+}
+
+.time {
+  color: #29655c;
+}
+.icons {
+  visibility: hidden;
+}
+
+.tweet:hover .icons {
+  color: #18c1a7;
+  visibility: visible;
+  position: absolute;
+  right: 175px;
+}
