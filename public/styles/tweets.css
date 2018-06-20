@@ -1,5 +1,5 @@
 .tweet {
-  margin: 0.5em 2em;
+  margin: 1.5em 2em;
   border-radius: 10px;
   border-style: groove;
   width: 24em;
@@ -29,8 +29,8 @@
 
 .tweet .handle {
   font-size: 1em;
-  margin-left: 240px;
-  position: absolute;
+  float: right;
+  margin-right: 10px;
   margin-top: 12px;
   color: #9e9e9e;
 }
@@ -57,6 +57,6 @@
 .tweet:hover .icons {
   color: #18c1a7;
   visibility: visible;
-  position: absolute;
-  right: 175px;
+  float: right;
+  margin-right: 10px;
 }
