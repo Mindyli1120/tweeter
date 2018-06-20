@@ -5,6 +5,7 @@
   height: 10em;
   border-style: groove;
   border-radius: 10px;
+
 }
 
 .new-tweet h2 {
@@ -27,4 +28,8 @@
 
 .counter {
   font-style: italic;
+}
+
+.counterRed {
+  color: red;
 }
