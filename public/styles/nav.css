@@ -17,3 +17,21 @@
   line-height: 2.8;
   position: absolute;
 }
+
+#nav-bar button {
+  margin-top: 10px;
+  float: right;
+  width: 100px;
+  height: 60px;
+  color: #1fa792;
+  font-size: 17px;
+  background-color: #cbf3ed;
+  border-color: black;
+  border-radius: 0.5em;
+}
+
+#nav-bar button:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+}

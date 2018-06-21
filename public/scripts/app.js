@@ -73,6 +73,14 @@ $(document).ready(function() {
   };
   loadTweets();
 
+    //Use compose to show new-tweet box and change user;
+  $(".new-tweet").hide();
+  $(".compose").click(function(){
+    $(".new-tweet").toggle();
+    $("#new-tweet-text").select()
+  })
+
+
 
 });
 
