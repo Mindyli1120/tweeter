@@ -35,7 +35,7 @@
   color: #9e9e9e;
 }
 
-.tweet .content {
+.tweet p {
   border-bottom-style: ridge;
   height: 48%;
   border-bottom-color: #f9f9f9;

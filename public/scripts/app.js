@@ -17,6 +17,12 @@ $(document).ready(function() {
 
   //function to create new tweet;
   function createTweetElement(newTweet) {
+    function escape(str) {
+      const p = document.createElement("p");
+      p.appendChild(document.createTextNode(str));
+      return p.innerHTML;
+    }
+
     let tweet = `
     <article class="tweet">
       <header>
@@ -24,7 +30,7 @@ $(document).ready(function() {
         <span class="username">${newTweet.user.name}</span>
         <span class="handle">${newTweet.user.handle}</span>
       </header>
-      <p class="content">${newTweet.content.text}</p>
+      <p>${escape(newTweet.content.text)}</p>
       <footer>
         <span class="time">${newTweet.created_at}</span>
         <span class="icons"><i class="fas fa-flag"></i>
@@ -38,18 +44,22 @@ $(document).ready(function() {
 
   $("form").on("submit", function(e) {
     e.preventDefault();
-
-
     let newData = $("form").serialize();
-    console.log(newData);
-
-  //3. ajex the data and append it to the page.
-    $.ajax("/tweets", {
-      method: "POST",
-      data: newData
-    }).done(function(data){
-        loadTweets();
-    });
+    let validInput = newData.substr(5);
+  //Test if the data is empty or too long, if so, pop up flash messages
+    if (validInput === "" || validInput === null) {
+      alert("There is no content made! Please re-enter!");
+    } else if (validInput.length > 140) {
+      alert("Exceed the maximum length! Please re-enter!");
+    } else {
+      $.ajax("/tweets", {
+        method: "POST",
+        data: newData
+      }).done(function(data){
+          loadTweets();
+      });
+      $("textarea").val("");
+    }
   })
 
   //loading the tweets that has been composed.
@@ -62,6 +72,8 @@ $(document).ready(function() {
     })
   };
   loadTweets();
+
+
 });
 
 
