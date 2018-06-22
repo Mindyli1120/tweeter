@@ -6,7 +6,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Project
 * Here is a demo for what the tweeter website looks like.
-!["The demo"](https://github.com/Mindyli1120/tweeter/blob/master/image/TweeterNewDemo.gif?raw=true);
+!["The demo"](https://github.com/Mindyli1120/tweeter/blob/master/image/TweeterDemo.gif?raw=true);
 
 ## Getting Started
 
