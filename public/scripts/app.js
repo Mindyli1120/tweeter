@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -23,6 +24,20 @@ $(document).ready(function() {
       return p.innerHTML;
     }
 
+    function timeAgo(time) {
+
+      if ((Date.now() - time) / 60 < 60) {
+        const secondsAgo = Math.floor((Date.now() - time) / 60);
+        return (secondsAgo + "seconds ago");
+      } else if (((Date.now() - time) / 60 > 60) && ((Date.now() - time) / 3600) < 24){
+        const hoursAgo = Math.floor((Date.now() - time) / 3600);
+        return (hoursAgo + " hours ago");
+      } else {
+        const days = Math.floor((Date.now() - time) / 85400);
+        return (days + " days ago");
+      }
+    }
+
     let tweet = `
     <article class="tweet">
       <header>
@@ -32,7 +47,7 @@ $(document).ready(function() {
       </header>
       <p>${escape(newTweet.content.text)}</p>
       <footer>
-        <span class="time">${newTweet.created_at}</span>
+        <span class="time">${timeAgo(newTweet.created_at)}</span>
         <span class="icons"><i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
         <i class="fas fa-heart"></i></span>
@@ -59,6 +74,7 @@ $(document).ready(function() {
           loadTweets();
       });
       $("textarea").val("");
+      $(".counter").text("140");
     }
   })
 
@@ -76,11 +92,9 @@ $(document).ready(function() {
     //Use compose to show new-tweet box and change user;
   $(".new-tweet").hide();
   $(".compose").click(function(){
-    $(".new-tweet").toggle();
+    $(".new-tweet").slideToggle();
     $("#new-tweet-text").select()
   })
-
-
 
 });
 
