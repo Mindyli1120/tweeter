@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#new-tweet-text").on('keydown', (function() {
+  $("#new-tweet-text").on('keyup', (function() {
     let numUsed = $(this).val().length;
     let numleft = 140 - numUsed;
     $(".counter").text(numleft);
