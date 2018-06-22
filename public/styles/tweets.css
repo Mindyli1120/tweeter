@@ -60,3 +60,7 @@
   float: right;
   margin-right: 10px;
 }
+
+.tweet:hover {
+  border-color: black;
+}
