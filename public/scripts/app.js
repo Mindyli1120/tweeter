@@ -25,12 +25,12 @@ $(document).ready(function() {
     }
 
     function timeAgo(time) {
-      if ((Date.now() - time) / 60000 < 2) {
+      if ((Date.now() - time) / 1000 < 120) {
         return ("Just now")
       } else if ((Date.now() - time) / 60000 < 60) {
-        const secondsAgo = Math.floor((Date.now() - time) / 60000);
-        return (secondsAgo + " seconds ago");
-      } else if (((Date.now() - time) / 60000 > 60) && ((Date.now() - time) / 3600000) < 24){
+        const minutesAgo = Math.floor((Date.now() - time) / 60000);
+        return (minutesAgo + " minutes ago");
+      } else if (((Date.now() - time) / 1000 > 60) && ((Date.now() - time) / 3600000) < 24){
         const hoursAgo = Math.floor((Date.now() - time) / 3600000);
         return (hoursAgo + " hours ago");
       } else {
@@ -64,9 +64,9 @@ $(document).ready(function() {
     let validInput = newData.substr(5);
   //Test if the data is empty or too long, if so, pop up flash messages
     if (validInput === "" || validInput === null) {
-      alert("There is no content made! Please re-enter!");
+      toastr.error("There is no content made! Please re-enter!");
     } else if (validInput.length > 140) {
-      alert("Exceed the maximum length! Please re-enter!");
+      toastr.error("Exceed the maximum length! Please re-enter!");
     } else {
       $.ajax("/tweets", {
         method: "POST",
