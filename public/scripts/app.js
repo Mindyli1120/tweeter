@@ -25,15 +25,16 @@ $(document).ready(function() {
     }
 
     function timeAgo(time) {
-
-      if ((Date.now() - time) / 60 < 60) {
-        const secondsAgo = Math.floor((Date.now() - time) / 60);
-        return (secondsAgo + "seconds ago");
-      } else if (((Date.now() - time) / 60 > 60) && ((Date.now() - time) / 3600) < 24){
-        const hoursAgo = Math.floor((Date.now() - time) / 3600);
+      if ((Date.now() - time) / 60000 < 2) {
+        return ("Just now")
+      } else if ((Date.now() - time) / 60000 < 60) {
+        const secondsAgo = Math.floor((Date.now() - time) / 60000);
+        return (secondsAgo + " seconds ago");
+      } else if (((Date.now() - time) / 60000 > 60) && ((Date.now() - time) / 3600000) < 24){
+        const hoursAgo = Math.floor((Date.now() - time) / 3600000);
         return (hoursAgo + " hours ago");
       } else {
-        const days = Math.floor((Date.now() - time) / 85400);
+        const days = Math.floor((Date.now() - time) / 86400000);
         return (days + " days ago");
       }
     }
